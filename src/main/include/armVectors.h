@@ -14,6 +14,32 @@ constexpr double lowPost[] = {21, 46, 111}, lowPostBack[] = {-95, 300, 37},
                  cubeOnFloorBack[] = {-50, 244, 43},
                  cubeOnFloor[] = {-11.5, 120, 95};
 
+// A sketch of how arm position routing might work:
+//
+// #define ARM_POSITION_WHEREVER 13
+// #define ARM_POSITION_SOMEWHERE_ELSE 14
+// int immediate_target;
+// int ultimate_target;
+// if (arm at immediate target) {
+//        immediate_target = transition_matrix[immediate_target][ultimate_target];
+// }
+// int transition_function(int current, int destination) {
+//        if (current == ARM_POSITION_WHEREVER) {
+//               switch (destination) {
+//                      case ARM_POSITION_ELSEWHERE:
+//               default:
+//                      ARM_POISITION_NEUTRAL
+//               }
+//        }
+//        if (current == ARM_POSITION_NEUTRAL) {
+//               return destination
+//        }
+// }
+// int transition_matrix[][] = {
+//        { ARM_POSITION_WHEREVER, 
+//        }
+// }
+
 using Constants::pi;
 using Constants::Arm::ht, Constants::Arm::len1, Constants::Arm::len2,
     Constants::Arm::len3;

@@ -97,12 +97,18 @@ namespace Constants
                          nAngleStage2 = -0 / 360,
                          momentStage3 = len3 /*in*/ * 3.3 /*lb*/,
                          nAngleStage3 = 0 / 360; // todo: real values
-        constexpr double maxVel = 2 * velPerRPS,
-                         maxAccel = .2 * velPerRPS; // for Motion Magic
+        
+        constexpr double maxVelStage12 = 4 * velPerRPS,
+                         maxAccelStage12 = .4 * velPerRPS; // for Motion Magic
+        constexpr double maxVelStage3 = 8 * velPerRPS,
+                         maxAccelStage3 = .8 * velPerRPS; // for Motion Magic
         // the Motion Magic parameters are translated in interanl units from
         // rotations/sec and rotations/sec^2
-        constexpr double CtlP0 = 0.75, CtlP1 = .1,
-                         CtlF = 0.5 * 1024 / maxVel; // for PID
+        constexpr double CtlStage12P0 = 0.75, CtlStage12P1 = .1,
+                         CtlStage12F = 0.5 * 1024 / maxVelStage12; // for PID
+        constexpr double CtlStage3P0 = 0.75, CtlStage3P1 = .1,
+                         CtlStage3F = 0.5 * 1024 / maxVelStage3; // for PID
+
         constexpr double initialCorrections[] = {
             -19 * ticksPerRotation * gear1to2 / 360,
             (125 - 19) * ticksPerRotation / 360, (125 + 224) * ticksPerRotation / 360};
