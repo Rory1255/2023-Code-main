@@ -17,15 +17,16 @@
  * Command will *not* work!
  */
 class ExampleCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ExampleCommand> {
- public:
+    : public frc2::CommandHelper<frc2::CommandBase, ExampleCommand>
+{
+public:
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ExampleCommand(Intake* subsystem);
+  explicit ExampleCommand(Intake *subsystem);
 
- private:
-  Intake* m_subsystem;
+private:
+  Intake *m_subsystem;
 };

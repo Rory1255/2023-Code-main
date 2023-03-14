@@ -9,19 +9,24 @@ using namespace Constants::Intake;
 
 Intake::Intake()
     : wheels(whnum, rev::CANSparkMax::MotorType::kBrushless),
-      deployed(Stop) {
+      deployed(Stop)
+{
   wheels.SetIdleMode(rev::CANSparkMax::IdleMode::kBrake);
 }
 
-void Intake::Periodic() {
-    if (deployed == CubeShoot) wheels.Set(-1); //todo: make constant
-    else wheels.Set(whpow * (int) deployed);
+void Intake::Periodic()
+{
+  if (deployed == CubeShoot)
+    wheels.Set(-1); // todo: make constant
+  else
+    wheels.Set(whpow * (int)deployed);
 }
 
 void Intake::SetDeployed(IntakeState d) { deployed = d; }
 
 IntakeState Intake::IsDeployed() { return deployed; }
 
-void Intake::SimulationPeriodic() {
+void Intake::SimulationPeriodic()
+{
   // Implementation of subsystem simulation periodic method goes here.
 }

@@ -14,8 +14,9 @@
  * All the control objects for a single wheel. Initialized with an index to Id.
  * tables in constants.h.
  */
-class SwerveModule : public frc2::SubsystemBase {
- public:
+class SwerveModule : public frc2::SubsystemBase
+{
+public:
   SwerveModule();
 
   /**
@@ -41,7 +42,7 @@ class SwerveModule : public frc2::SubsystemBase {
   void SimulationPeriodic() override;
   units::inch_t GetDistance();
 
- private:
+private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
   ctre::phoenix::motorcontrol::can::WPI_TalonFX drive, turn;
@@ -54,8 +55,9 @@ class SwerveModule : public frc2::SubsystemBase {
 /**
  * all the driving and navigation objects, incl. a SwerveModule for each wheel.
  */
-class DriveTrain : public frc2::SubsystemBase {
- public:
+class DriveTrain : public frc2::SubsystemBase
+{
+public:
   DriveTrain();
 
   // X is forward
@@ -69,7 +71,8 @@ class DriveTrain : public frc2::SubsystemBase {
   void SetV(double linX, double linY, double rot, double throttles,
             bool fieldcentered = true);
 
-  void ZeroYaw() {
+  void ZeroYaw()
+  {
     navx.ZeroYaw();
   }
 
@@ -85,9 +88,9 @@ class DriveTrain : public frc2::SubsystemBase {
    * simulation.
    */
   void SimulationPeriodic() override;
-  units::inch_t GetDistance(int wheelIx=0);
+  units::inch_t GetDistance(int wheelIx = 0);
 
- private:
+private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
   SwerveModule wheels[4];

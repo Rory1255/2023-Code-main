@@ -15,22 +15,23 @@
  */
 
 class AutoDrive
-    : public frc2::CommandHelper<frc2::CommandBase, AutoDrive> {
- public:
+    : public frc2::CommandHelper<frc2::CommandBase, AutoDrive>
+{
+public:
   /**
    * Creates a new AutoDrive.
    *
    * @param subsystem The subsystem used by this command.
    */
-  AutoDrive(DriveTrain& subsystem, units::inch_t fwdDist, units::inch_t leftDist, double motorPwr);
+  AutoDrive(DriveTrain &subsystem, units::inch_t fwdDist, units::inch_t leftDist, double motorPwr);
 
   void Initialize() override;
 
   void Execute() override;
   bool IsFinished() override;
 
- private:
-  DriveTrain& drive;
+private:
+  DriveTrain &drive;
   double x, y;
   units::inch_t startEnc, dist1;
 };

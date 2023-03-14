@@ -5,10 +5,17 @@
 #include <frc2/command/SubsystemBase.h>
 #include <rev/cansparkmax.h>
 
-enum IntakeState {Stop = 0, ConeIn = 1, CubeIn = -1, CubeShoot = 2};
+enum IntakeState
+{
+  Stop = 0,
+  ConeIn = 1,
+  CubeIn = -1,
+  CubeShoot = 2
+};
 
-class Intake : public frc2::SubsystemBase {
- public:
+class Intake : public frc2::SubsystemBase
+{
+public:
   Intake();
 
   /**
@@ -25,7 +32,7 @@ class Intake : public frc2::SubsystemBase {
    */
   void SimulationPeriodic() override;
 
- private:
+private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
   rev::CANSparkMax wheels;

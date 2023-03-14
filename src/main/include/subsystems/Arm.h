@@ -4,8 +4,9 @@
 
 #include <frc2/command/SubsystemBase.h>
 
-class Arm : public frc2::SubsystemBase {
- public:
+class Arm : public frc2::SubsystemBase
+{
+public:
   Arm();
 
   /**
@@ -14,14 +15,18 @@ class Arm : public frc2::SubsystemBase {
   void Periodic() override;
 
   void SetAngles(double stage1Degrees, double stage2Degrees, double stage3Degrees); // 0, 0 is start position
-  void SetAngles(const double (&angles)[3]); 
+  void SetAngles(const double (&angles)[3]);
   bool AtSetpoint(const double (&angles)[3]);
-  void SetVeloc(double stage1RotPerSec, double stage2RotPerSec, double stage3RotPerSec); 
+  void SetVeloc(double stage1RotPerSec, double stage2RotPerSec, double stage3RotPerSec);
   void SetLinVeloc(double fwdInPerSec, double upInPerSec, double stage3DegreesPerSec);
   void HoldStill(double mov3 = 0);
-  void SetMotors(double st1, double st2, double st3){
-    stage1.Set(st1); stage2.Set(st2); stage3.Set(st3);// testing only
+  void SetMotors(double st1, double st2, double st3)
+  {
+    stage1.Set(st1);
+    stage2.Set(st2);
+    stage3.Set(st3); // testing only
   }
- private:
+
+private:
   WPI_TalonFX stage1, stage2, stage3;
 };
