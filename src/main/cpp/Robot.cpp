@@ -6,8 +6,10 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc2/command/CommandScheduler.h>
+#include <cameraserver/CameraServer.h>
 
 void Robot::RobotInit() {
+   frc::CameraServer::StartAutomaticCapture();
    m_container.Init();  // setting the encoders based on absolute readings: does
                        // it work here?
 

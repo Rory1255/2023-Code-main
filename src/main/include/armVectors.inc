@@ -10,7 +10,7 @@ double  lowPost[] = {21, 46, 111},
         openInBack[] = {-63, 125, 224},
         foldedDown[] = {-19, 125, 224},
         
-        conePickup1[] = {57,25,86},
+        conePickup1[] = {57,25,130},
         conePickup2[] = {57,26,85},
         cubePickup1[] = {50,49,108},
         cubePickup2[] = {50,50,109},
@@ -18,7 +18,7 @@ double  lowPost[] = {21, 46, 111},
         coneOnFloorBack1[] = {-35, 282, 55},
         coneOnFloorBack2[] = {-32, 275, 57},
         cubeOnFloorBack[] = {-50, 244, 43},
-        cubeOnFloor[] = {-11.5,120,92};
+        cubeOnFloor[] = {-11.5,120,95};
 
 using Constants::Arm::ht, Constants::Arm::len1, Constants::Arm::len2, Constants::Arm::len3;
 using Constants::pi;
