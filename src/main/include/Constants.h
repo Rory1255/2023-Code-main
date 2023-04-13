@@ -36,7 +36,7 @@ namespace Constants
     using std::numbers::pi;
     namespace RobotContainer
     {
-        constexpr double minThrottle = .2, maxThrottle = .90, baseThrottle = .35,
+        constexpr double minThrottle = .1, maxThrottle = .90, baseThrottle = .4,
                          stickError = .05;
     }
     namespace DriveTrain
